@@ -944,7 +944,7 @@ let axisFirst = {
 // Profils (à compléter plus tard)
 // =========================
 
-const PERSONALITIES = {};
+const PERSONALITIES = window.PERSONALITIES || {};
 
 // =========================
 // DOM
