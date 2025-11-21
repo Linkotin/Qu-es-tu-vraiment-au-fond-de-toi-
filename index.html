@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Oracle des Mogs — Profil Mystique</title>
+<title>Oracle des Mogs — Cristaux Intérieurs</title>
 
 <style>
 /* ——— RESET ——— */
@@ -38,7 +38,7 @@ body {
 }
 
 /* ——— TITRES ——— */
-h1, h2 {
+h1, h2, h3 {
   font-family: "Cinzel Decorative", serif;
   letter-spacing: 2px;
   margin-bottom: 25px;
@@ -53,6 +53,12 @@ h1 {
 h2 {
   font-size: 1.6rem;
   color: #cfaaff;
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: #e3d0ff;
+  margin-bottom: 10px;
 }
 
 /* ——— TEXTE ——— */
@@ -92,7 +98,7 @@ section.active {
   display: block;
 }
 
-/* ——— SECTION RESULTAT ——— */
+/* ——— BLOCS D'INFO / RESULT ——— */
 .result {
   margin-top: 30px;
   padding: 20px;
@@ -111,7 +117,6 @@ footer {
 }
 </style>
 
-<!-- POLICES (hébergées par Google, pas de dossier) -->
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
@@ -122,41 +127,110 @@ footer {
 
   <!-- ÉCRAN D'ACCUEIL -->
   <section id="intro" class="active">
-    <h1>Oracle Sylvestre</h1>
-    <p>Approche, kupo. Cet oracle murmure le personnage qui veille en toi.<br>
-    Qui sommeille au fond de ton âme ?</p>
+    <h1>Oracle des Mogs</h1>
+    <p>
+      Approche, kupo. Les cristaux frémissent quand tu pénètres dans le cercle.<br>
+      Je ne vais pas te dire qui tu dois devenir — je vais simplement révéler ce qui veille déjà.
+    </p>
 
-    <button onclick="start()">Commencer</button>
+    <p>
+      Ne cherche pas à impressionner, ne cherche pas à mentir.<br>
+      Tu n’es pas ici pour te montrer. Tu es ici pour te retrouver.
+    </p>
+
+    <button onclick="start()">Je suis prêt.</button>
   </section>
 
-  <!-- ÉCRAN QUIZZ (VIDE POUR L’INSTANT) -->
+  <!-- ÉCRAN QUIZZ (MULTI-PARTIES) -->
   <section id="quiz">
-    <h2>Voyage Intérieur</h2>
-    <p>Le quiz viendra ici, branche par branche.</p>
+    <h2>Voyage intérieur</h2>
+    <p>
+      Très bien, kupo… le cercle s’est refermé.  
+      Tu ne réponds plus pour convaincre, mais pour te dévoiler.  
+      Le rituel cherche le guerrier enfoui sous les mots et les réflexes.
+    </p>
 
-    <button onclick="showResult()">Terminer</button>
-  </section>
-
-  <!-- ÉCRAN RESULTAT -->
-  <section id="result">
-    <h2>Ton Arbre Émerge</h2>
+    <p>
+      Garde ton souffle tranquille.  
+      Ne force rien.  
+      Les cristaux entendent d’abord ce que tu caches à toi-même.
+    </p>
 
     <div class="result">
-      <p>Ici, on affichera ton profil, kupo.</p>
+      <h3>Partie I — Cristal élémentaire</h3>
+      <p>
+        Ce cristal écoute l’élan qui anime ton âme quand tout se met à vibrer.  
+        Il ne suit pas ton masque, mais ce qui pulse avant ta pensée.
+      </p>
+    </div>
+
+    <div class="result">
+      <h3>Partie II — Cristal du cœur</h3>
+      <p>
+        Celui-ci observe la route que prend ton intention lorsqu’un lien se tend ou se brise.  
+        Il révèle la direction silencieuse de ton souffle.
+      </p>
+    </div>
+
+    <div class="result">
+      <h3>Partie III — Cristal de puissance</h3>
+      <p>
+        Ce cristal perçoit comment ta volonté devient acte.  
+        Peu importe l’arme, c’est la source qui compte, kupo.
+      </p>
+    </div>
+
+    <div class="result">
+      <h3>Partie IV — Cristal du masque</h3>
+      <p>
+        Ici, le cristal sent la forme que prend ton être quand il rencontre le monde.  
+        Pas ce que tu prétends, mais ce qui se dessine malgré toi.
+      </p>
+    </div>
+
+    <div class="result">
+      <h3>Partie V — Cristal de solitude</h3>
+      <p>
+        Le dernier écoute l’endroit où ta lumière se restaure.  
+        Il ne demande pas ce que tu fuis, mais où tu redeviens entier.
+      </p>
+    </div>
+
+    <p style="margin-top: 25px;">
+      Pour l’instant, le cercle ne questionne pas.  
+      Quand tu l’accepteras, il ouvrira la voie, kupo.
+    </p>
+
+    <button onclick="showResult()">J’accepte ce qui sommeille en moi.</button>
+  </section>
+
+  <!-- ÉCRAN RÉSULTAT -->
+  <section id="result">
+    <h2>Révélation du guerrier intérieur</h2>
+
+    <div class="result">
+      <p>
+        Le rite est accompli, kupo.<br>
+        Derrière ton visage, une forme se dessine — un rôle, une manière de survivre,  
+        une façon de blesser, de protéger, de tenir debout.
+      </p>
+
+      <p>
+        Ici s’inscrira ton essence : ton souffle, ta force, ton ombre,  
+        et la trace que tu laisses dans les autres.
+      </p>
     </div>
     
-    <button onclick="restart()">Recommencer</button>
+    <button onclick="restart()">Je marche à nouveau.</button>
   </section>
 
   <footer>
-    Oracle sylvestre — t’inquiète, ça mord pas… sauf si tu tires sur les racines, kupo.
+    Oracle des Mogs — le silence révèle plus que la lumière, kupo.
   </footer>
 
 </div>
 
 <script>
-/* MINI SCRIPT PROVISOIRE POUR NAVIGATION (aucune logique de profil encore) */
-
 function start() {
   document.getElementById("intro").classList.remove("active");
   document.getElementById("quiz").classList.add("active");
