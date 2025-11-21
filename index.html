@@ -1,102 +1,177 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <title>Qu'es-tu vraiment au fond de toi ?</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<title>Oracle des Arbres — Profil Mystique</title>
+
+<style>
+/* ——— RESET ——— */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ——— FOND & AMBIANCE ——— */
+body {
+  background: radial-gradient(circle at center, #251b34 0%, #0b0711 100%);
+  color: #e5d8ff;
+  font-family: "Cinzel", serif;
+  text-shadow: 0 0 8px rgba(150, 85, 255, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ——— CONTENEUR PRINCIPAL ——— */
+.container {
+  width: 80%;
+  max-width: 900px;
+  padding: 40px;
+  background: rgba(40, 30, 55, 0.45);
+  border: 1px solid rgba(200, 170, 255, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(160, 120, 255, 0.25);
+  backdrop-filter: blur(6px);
+  text-align: center;
+}
+
+/* ——— TITRES ——— */
+h1, h2 {
+  font-family: "Cinzel Decorative", serif;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-size: 2.4rem;
+  color: #dcb8ff;
+  text-shadow: 0 0 12px rgba(200, 160, 255, 0.7);
+}
+
+h2 {
+  font-size: 1.6rem;
+  color: #cfaaff;
+}
+
+/* ——— TEXTE ——— */
+p {
+  font-size: 1.2rem;
+  line-height: 1.7em;
+  margin-bottom: 20px;
+}
+
+/* ——— BOUTONS ——— */
+button {
+  background: linear-gradient(90deg, #7646ff, #9d62ff);
+  border: none;
+  padding: 14px 24px;
+  font-size: 1.1rem;
+  color: #fff;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 30px;
+  font-family: inherit;
+  text-shadow: 0 0 6px rgba(255,255,255,0.2);
+  box-shadow: 0 0 12px rgba(140, 90, 255, 0.3);
+  transition: 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #5b33d9, #bb74ff);
+  box-shadow: 0 0 20px rgba(190, 130, 255, 0.4);
+}
+
+/* ——— SECTIONS ——— */
+section {
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
+/* ——— SECTION RESULTAT ——— */
+.result {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(80,60,120,0.3);
+  border-left: 3px solid rgba(200,150,255,0.4);
+  border-radius: 8px;
+  text-align: left;
+}
+
+/* ——— PHRASE MOG ——— */
+footer {
+  margin-top: 40px;
+  color: #9a84c7;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+</style>
+
+<!-- POLICES (hébergées par Google, pas de dossier) -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-  <header>
-    <h1>Qu'es-tu vraiment au fond de toi ?</h1>
-    <p class="subtitle">
-      Pas ce que tu montres.<br />
-      Pas ce que tu crois.<br />
-      Ce que tu incarnes, silencieusement.
-    </p>
-  </header>
 
-  <main>
-    <!-- SECTION ACCUEIL -->
-    <section id="home-section" class="section active">
-      <p class="intro">
-        40 questions.<br />
-        6 natures fondamentales.<br />
-        96 formes d’existence possibles.<br /><br />
-        Tu ne tomberas peut-être pas sur ce que tu espères.
-      </p>
-      <button id="start-btn" class="btn primary">Commencer le test</button>
+<div class="container">
 
-      <section class="info-block">
-        <h2>Ce test ne mesure pas ta personnalité.</h2>
-        <p>
-          Il cartographie ta façon d’exister :<br />
-          – comment tu occupes l’espace<br />
-          – comment tu traites les autres<br />
-          – comment tu encaisses, comment tu persistes<br />
-          – ce que tu portes sans le dire<br /><br />
-          À la fin, tu ne reçois pas un “profil psychologique”,<br />
-          tu reçois ce que tu es dans le paysage :<br />
-          un arbre, une bête, une machine, un esprit, un objet, une créature fantastique.
-        </p>
-      </section>
+  <!-- ÉCRAN D'ACCUEIL -->
+  <section id="intro" class="active">
+    <h1>Oracle Sylvestre</h1>
+    <p>Approche, kupo. Cet oracle murmure l’arbre qui veille en toi.<br>
+    Pas besoin de hurler, la forêt t’écoute déjà.</p>
 
-      <section class="info-block">
-        <h2>Ce que le test analyse sans te le dire :</h2>
-        <ul>
-          <li>Ton terrain : <strong>Sauvage</strong> ou <strong>Urbain</strong></li>
-          <li>Ta structure : <strong>Noble</strong> ou <strong>Brisé</strong></li>
-          <li>Ta présence : <strong>Massive</strong> ou <strong>Discrète</strong></li>
-          <li>Ta couleur : <strong>Sombre</strong> ou <strong>Excessive</strong></li>
-        </ul>
-      </section>
-    </section>
+    <button onclick="start()">Commencer</button>
+  </section>
 
-    <!-- SECTION QUIZ -->
-    <section id="quiz-section" class="section">
-      <div id="question-container">
-        
-      <div id="theme-intro" class="theme-intro hidden">
-        <h3 id="theme-title"></h3>
-        <p id="theme-text"></p>
-      </div>
+  <!-- ÉCRAN QUIZZ (VIDE POUR L’INSTANT) -->
+  <section id="quiz">
+    <h2>Voyage Intérieur</h2>
+    <p>Le quiz viendra ici, branche par branche.</p>
 
-      <div id="question-header">
-          <span id="question-number"></span>
-          <div id="progress-bar">
-            <div id="progress-fill"></div>
-          </div>
-        </div>
-        <h2 id="question-text"></h2>
-        <div id="answers-container"></div>
-        <div class="nav-buttons">
-          <button id="prev-btn" class="btn secondary">Précédent</button>
-          <button id="next-btn" class="btn primary">Suivant</button>
-        </div>
-      </div>
-    </section>
+    <button onclick="showResult()">Terminer</button>
+  </section>
 
-    <!-- SECTION RESULTAT -->
-    <section id="result-section" class="section">
-      <div id="result-content">
-        <h2 id="result-title"></h2>
-        <p id="result-archetype"></p>
-        <div id="result-image-wrapper">
-          <div id="result-image-placeholder">[ illustration symbolique ici ]</div>
-        </div>
-        <div id="result-analysis"></div>
-        <div id="result-strengths"></div>
-        <div id="result-weaknesses"></div>
-        <div id="result-growth"></div>
-        <button id="restart-btn" class="btn secondary">Recommencer</button>
-      </div>
-    </section>
-  </main>
+  <!-- ÉCRAN RESULTAT -->
+  <section id="result">
+    <h2>Ton Arbre Émerge</h2>
+
+    <div class="result">
+      <p>Ici, on affichera ton profil, kupo.</p>
+    </div>
+    
+    <button onclick="restart()">Recommencer</button>
+  </section>
 
   <footer>
-    <p>Test d’archétype existentiel &copy; Toi & ton IA</p>
+    Oracle sylvestre — t’inquiète, ça mord pas… sauf si tu tires sur les racines, kupo.
   </footer>
 
-  <script src="profiles.js"></script>
-    <script src="script.js"></script>
+</div>
+
+<script>
+/* MINI SCRIPT PROVISOIRE POUR NAVIGATION (aucune logique de profil encore) */
+
+function start() {
+  document.getElementById("intro").classList.remove("active");
+  document.getElementById("quiz").classList.add("active");
+}
+
+function showResult() {
+  document.getElementById("quiz").classList.remove("active");
+  document.getElementById("result").classList.add("active");
+}
+
+function restart() {
+  document.getElementById("result").classList.remove("active");
+  document.getElementById("intro").classList.add("active");
+}
+</script>
+
 </body>
 </html>
