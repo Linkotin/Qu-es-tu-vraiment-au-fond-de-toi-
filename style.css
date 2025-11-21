@@ -1,280 +1,104 @@
+/* ——— RESET ——— */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+/* ——— AMBIANCE GLOBALE ——— */
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #070b10;
-  color: #e7e2d9;
-  min-height: 100vh;
+  background: radial-gradient(circle at center, #251b34 0%, #0b0711 100%);
+  color: #e5d8ff;
+  font-family: "Cinzel", serif;
+  text-shadow: 0 0 8px rgba(150, 85, 255, 0.4);
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-header {
+/* ——— CONTENEUR ——— */
+.container {
+  width: 80%;
+  max-width: 900px;
+  padding: 40px;
+  background: rgba(40, 30, 55, 0.45);
+  border: 1px solid rgba(200, 170, 255, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(160, 120, 255, 0.25);
+  backdrop-filter: blur(6px);
   text-align: center;
-  padding: 2rem 1rem 1rem;
+}
+
+/* ——— TITRES ——— */
+h1, h2 {
+  font-family: "Cinzel Decorative", serif;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
 }
 
 h1 {
   font-size: 2.4rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  color: #dcb8ff;
+  text-shadow: 0 0 12px rgba(200, 160, 255, 0.7);
 }
 
-.subtitle {
-  margin-top: 0.7rem;
-  font-size: 1rem;
-  color: #a9a29a;
+h2 {
+  font-size: 1.6rem;
+  color: #cfaaff;
 }
 
-main {
-  flex: 1;
-  max-width: 900px;
-  width: 100%;
-  margin: 0 auto 2rem;
-  padding: 0 1rem;
+/* ——— TEXTES ——— */
+p {
+  font-size: 1.2rem;
+  line-height: 1.7em;
+  margin-bottom: 20px;
 }
 
-.section {
+/* ——— SECTIONS ——— */
+section {
   display: none;
-  margin-top: 2rem;
 }
 
-.section.active {
+section.active {
   display: block;
 }
 
-.intro {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-  color: #d0c9bf;
-}
-
-.info-block {
-  margin-top: 2rem;
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  background: #11161f;
-  border: 1px solid #252d3a;
-}
-
-.info-block h2 {
-  font-size: 1.2rem;
-  margin-bottom: 0.75rem;
-}
-
-.info-block p,
-.info-block ul {
-  font-size: 0.95rem;
-  color: #c0bab1;
-  line-height: 1.5;
-}
-
-.info-block ul {
-  list-style: disc;
-  padding-left: 1.2rem;
-}
-
-/* Buttons */
-
-.btn {
+/* ——— BOUTONS ——— */
+button {
+  background: linear-gradient(90deg, #7646ff, #9d62ff);
   border: none;
-  border-radius: 999px;
-  padding: 0.7rem 1.6rem;
-  font-size: 0.95rem;
-  cursor: pointer;
-  margin: 0.3rem;
-  transition: background 0.18s ease, transform 0.08s ease, box-shadow 0.18s ease;
-}
-
-.btn.primary {
-  background: #2e7d70;
-  color: #f7f2ea;
-  box-shadow: 0 0 0 1px #3ba58f55;
-}
-
-.btn.primary:hover {
-  background: #329786;
-  transform: translateY(-1px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
-}
-
-.btn.secondary {
-  background: #171e28;
-  color: #e7e2d9;
-  box-shadow: 0 0 0 1px #333b48;
-}
-
-.btn.secondary:hover {
-  background: #1f2834;
-  transform: translateY(-1px);
-}
-
-/* Quiz */
-
-#question-container {
-  background: #11161f;
-  border-radius: 0.9rem;
-  border: 1px solid #262f3b;
-  padding: 1.5rem;
-}
-
-.theme-intro {
-  background: #151c28;
-  border-radius: 0.8rem;
-  border: 1px solid #283345;
-  padding: 0.9rem 1rem;
-  margin-bottom: 1rem;
-}
-
-.theme-intro h3 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
-  color: #f0ead8;
-}
-
-.theme-intro p {
-  font-size: 0.9rem;
-  color: #c0b8ae;
-  line-height: 1.4;
-}
-
-.hidden {
-  display: none !important;
-}
-
-
-#question-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-  gap: 1rem;
-}
-
-#question-number {
-  font-size: 0.9rem;
-  color: #b0a89f;
-}
-
-#progress-bar {
-  flex: 1;
-  height: 6px;
-  border-radius: 999px;
-  background: #1a2230;
-  overflow: hidden;
-}
-
-#progress-fill {
-  height: 100%;
-  width: 0;
-  background: linear-gradient(90deg, #3ebfb4, #c9a667);
-  transition: width 0.2s ease;
-}
-
-#question-text {
+  padding: 14px 24px;
   font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
-
-#answers-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  margin-bottom: 1rem;
-}
-
-.answer-option {
-  border-radius: 0.7rem;
-  border: 1px solid #333b48;
-  padding: 0.7rem 0.9rem;
+  color: #fff;
+  border-radius: 12px;
   cursor: pointer;
-  font-size: 0.95rem;
-  background: #151b25;
-  transition: background 0.16s ease, border-color 0.16s ease, transform 0.08s ease;
+  margin-top: 30px;
+  font-family: inherit;
+  text-shadow: 0 0 6px rgba(255,255,255,0.2);
+  box-shadow: 0 0 12px rgba(140, 90, 255, 0.3);
+  transition: 0.2s;
 }
 
-.answer-option:hover {
-  background: #1b2230;
+button:hover {
+  background: linear-gradient(90deg, #5b33d9, #bb74ff);
+  box-shadow: 0 0 20px rgba(190, 130, 255, 0.4);
 }
 
-.answer-option.selected {
-  border-color: #3ebfb4;
-  background: #111d24;
-  transform: translateY(-1px);
+/* ——— RESULTAT ——— */
+.result {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(80,60,120,0.3);
+  border-left: 3px solid rgba(200,150,255,0.4);
+  border-radius: 8px;
+  text-align: left;
 }
 
-.nav-buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 0.5rem;
-}
-
-/* Result */
-
-#result-content {
-  background: #11161f;
-  border-radius: 0.9rem;
-  border: 1px solid #262f3b;
-  padding: 1.7rem;
-}
-
-#result-title {
-  font-size: 1.4rem;
-  margin-bottom: 0.4rem;
-}
-
-#result-archetype {
-  font-size: 0.95rem;
-  color: #bba98f;
-  margin-bottom: 1.1rem;
-}
-
-#result-image-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1.2rem;
-}
-
-#result-image-placeholder {
-  width: 180px;
-  height: 120px;
-  border-radius: 0.75rem;
-  border: 1px dashed #3a485b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  color: #80889a;
-}
-
-#result-analysis,
-#result-strengths,
-#result-weaknesses,
-#result-growth {
-  margin-bottom: 1.1rem;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #d3ccc2;
-}
-
-#result-strengths ul,
-#result-weaknesses ul {
-  list-style: disc;
-  padding-left: 1.2rem;
-}
-
-/* Footer */
-
+/* ——— FOOTER ——— */
 footer {
-  text-align: center;
-  font-size: 0.8rem;
-  color: #6e747e;
-  padding: 0.8rem 1rem 1.2rem;
-  border-top: 1px solid #141821;
+  margin-top: 40px;
+  color: #9a84c7;
+  font-size: 0.9rem;
+  opacity: 0.7;
 }
