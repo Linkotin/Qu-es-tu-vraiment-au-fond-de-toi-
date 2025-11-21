@@ -1152,51 +1152,27 @@ function renderMissingProfile(key) {
   resultStrengthsEl.innerHTML = "";
   resultWeaknessesEl.innerHTML = "";
   resultGrowthEl.innerHTML = "";
-}
 
 function showResult() {
   quizSection.classList.remove("active");
   resultSection.classList.add("active");
 
   const key = buildProfileKey();
-  const profile = PERSONALITIES[key];
 
-  if (!profile) {
-    resultTitleEl.textContent = "Profil en attente d’écriture";
-    resultArchetypeEl.textContent = key;
-    resultAnalysisEl.textContent =
-      "Ce profil existe dans la structure, mais son texte n’a pas encore été écrit. Tu peux le définir toi-même ou le laisser en suspens pour l’instant.";
-    resultStrengthsEl.innerHTML = "";
-    resultWeaknessesEl.innerHTML = "";
-    resultGrowthEl.innerHTML = "";
-    return;
-  }
-
-  resultTitleEl.textContent = profile.title;
-  resultArchetypeEl.textContent = profile.archetype;
-  resultAnalysisEl.textContent = profile.analysis.trim();
-
-  if (profile.strengths && profile.strengths.length) {
-    resultStrengthsEl.innerHTML =
-      "<strong>Points forts :</strong><ul>" +
-      profile.strengths.map((s) => `<li>${s}</li>`).join("") +
-      "</ul>";
-  } else {
-    resultStrengthsEl.innerHTML = "";
-  }
-
-  if (profile.weaknesses && profile.weaknesses.length) {
-    resultWeaknessesEl.innerHTML =
-      "<strong>Points faibles :</strong><ul>" +
-      profile.weaknesses.map((w) => `<li>${w}</li>`).join("") +
-      "</ul>";
-  } else {
-    resultWeaknessesEl.innerHTML = "";
-  }
-
-  if (profile.growth) {
-    resultGrowthEl.innerHTML = "<strong>S’améliorer :</strong><br>" + profile.growth.trim();
-  } else {
-    resultGrowthEl.innerHTML = "";
-  }
+  // On tente de charger dynamiquement le fichier de profil
+  loadProfileScript(
+    key,
+    () => {
+      const profile = PERSONALITIES[key];
+      if (profile) {
+        renderProfile(key, profile);
+      } else {
+        renderMissingProfile(key);
+      }
+    },
+    () => {
+      // Erreur de chargement du script
+      renderMissingProfile(key);
+    }
+  );
 }
