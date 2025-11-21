@@ -1,124 +1,134 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Oracle des Mogs — Cristaux Intérieurs</title>
+  <meta charset="UTF-8">
+  <title>Oracle des Mogs — Cristaux Intérieurs</title>
 
-<style>
-/* ——— RESET ——— */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <style>
+  /* ——— RESET ——— */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-/* ——— FOND & AMBIANCE ——— */
-body {
-  background: radial-gradient(circle at center, #251b34 0%, #0b0711 100%);
-  color: #e5d8ff;
-  font-family: "Cinzel", serif;
-  text-shadow: 0 0 8px rgba(150, 85, 255, 0.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
+  /* ——— FOND & AMBIANCE ——— */
+  body {
+    background: radial-gradient(circle at center, #251b34 0%, #0b0711 100%);
+    color: #e5d8ff;
+    font-family: "Cinzel", serif;
+    text-shadow: 0 0 8px rgba(150, 85, 255, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
 
-/* ——— CONTENEUR PRINCIPAL ——— */
-.container {
-  width: 80%;
-  max-width: 900px;
-  padding: 40px;
-  background: rgba(40, 30, 55, 0.45);
-  border: 1px solid rgba(200, 170, 255, 0.25);
-  border-radius: 16px;
-  box-shadow: 0 0 30px rgba(160, 120, 255, 0.25);
-  backdrop-filter: blur(6px);
-  text-align: center;
-}
+  /* ——— CONTENEUR PRINCIPAL ——— */
+  .container {
+    width: 80%;
+    max-width: 900px;
+    padding: 40px;
+    background: rgba(40, 30, 55, 0.45);
+    border: 1px solid rgba(200, 170, 255, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(160, 120, 255, 0.25);
+    backdrop-filter: blur(6px);
+    text-align: center;
+  }
 
-/* ——— TITRES ——— */
-h1, h2, h3 {
-  font-family: "Cinzel Decorative", serif;
-  letter-spacing: 2px;
-  margin-bottom: 25px;
-}
+  /* ——— TITRES ——— */
+  h1, h2, h3 {
+    font-family: "Cinzel Decorative", serif;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+  }
 
-h1 {
-  font-size: 2.4rem;
-  color: #dcb8ff;
-  text-shadow: 0 0 12px rgba(200, 160, 255, 0.7);
-}
+  h1 {
+    font-size: 2.4rem;
+    color: #dcb8ff;
+    text-shadow: 0 0 12px rgba(200, 160, 255, 0.7);
+  }
 
-h2 {
-  font-size: 1.6rem;
-  color: #cfaaff;
-}
+  h2 {
+    font-size: 1.6rem;
+    color: #cfaaff;
+  }
 
-h3 {
-  font-size: 1.2rem;
-  color: #e3d0ff;
-  margin-bottom: 10px;
-}
+  h3 {
+    font-size: 1.2rem;
+    color: #e3d0ff;
+    margin-bottom: 10px;
+  }
 
-/* ——— TEXTE ——— */
-p {
-  font-size: 1.2rem;
-  line-height: 1.7em;
-  margin-bottom: 20px;
-}
+  /* ——— TEXTE ——— */
+  p {
+    font-size: 1.1rem;
+    line-height: 1.7em;
+    margin-bottom: 18px;
+  }
 
-/* ——— BOUTONS ——— */
-button {
-  background: linear-gradient(90deg, #7646ff, #9d62ff);
-  border: none;
-  padding: 14px 24px;
-  font-size: 1.1rem;
-  color: #fff;
-  border-radius: 12px;
-  cursor: pointer;
-  margin-top: 30px;
-  font-family: inherit;
-  text-shadow: 0 0 6px rgba(255,255,255,0.2);
-  box-shadow: 0 0 12px rgba(140, 90, 255, 0.3);
-  transition: 0.2s;
-}
+  /* ——— BOUTONS ——— */
+  button {
+    background: linear-gradient(90deg, #7646ff, #9d62ff);
+    border: none;
+    padding: 12px 22px;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 24px;
+    font-family: inherit;
+    text-shadow: 0 0 6px rgba(255,255,255,0.2);
+    box-shadow: 0 0 12px rgba(140, 90, 255, 0.3);
+    transition: 0.2s;
+  }
 
-button:hover {
-  background: linear-gradient(90deg, #5b33d9, #bb74ff);
-  box-shadow: 0 0 20px rgba(190, 130, 255, 0.4);
-}
+  button:hover {
+    background: linear-gradient(90deg, #5b33d9, #bb74ff);
+    box-shadow: 0 0 20px rgba(190, 130, 255, 0.4);
+  }
 
-/* ——— SECTIONS ——— */
-section {
-  display: none;
-}
+  /* ——— SECTIONS ——— */
+  section {
+    display: none;
+  }
 
-section.active {
-  display: block;
-}
+  section.active {
+    display: block;
+  }
 
-/* ——— BLOCS D'INFO / RESULT ——— */
-.result {
-  margin-top: 30px;
-  padding: 20px;
-  background: rgba(80,60,120,0.3);
-  border-left: 3px solid rgba(200,150,255,0.4);
-  border-radius: 8px;
-  text-align: left;
-}
+  /* ——— BLOCS D'INFO / RESULT ——— */
+  .block {
+    margin-top: 20px;
+    padding: 18px;
+    background: rgba(80,60,120,0.3);
+    border-left: 3px solid rgba(200,150,255,0.4);
+    border-radius: 8px;
+    text-align: left;
+  }
 
-/* ——— PHRASE MOG ——— */
-footer {
-  margin-top: 40px;
-  color: #9a84c7;
-  font-size: 0.9rem;
-  opacity: 0.7;
-}
-</style>
+  .block p {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+  /* ——— RESULTAT TEXTE ——— */
+  .result-text {
+    white-space: pre-wrap;
+    font-size: 1rem;
+  }
 
+  /* ——— PHRASE MOG ——— */
+  footer {
+    margin-top: 40px;
+    color: #9a84c7;
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+  </style>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -138,68 +148,106 @@ footer {
       Tu n’es pas ici pour te montrer. Tu es ici pour te retrouver.
     </p>
 
-    <button onclick="start()">Je suis prêt.</button>
+    <button onclick="startRitual()">Je suis prêt.</button>
   </section>
 
-  <!-- ÉCRAN QUIZZ (MULTI-PARTIES) -->
-  <section id="quiz">
-    <h2>Voyage intérieur</h2>
-    <p>
-      Très bien, kupo… le cercle s’est refermé.  
-      Tu ne réponds plus pour convaincre, mais pour te dévoiler.  
-      Le rituel cherche le guerrier enfoui sous les mots et les réflexes.
-    </p>
+  <!-- PHASE I — CRISTAL ÉLÉMENTAIRE -->
+  <section id="phase1">
+    <h2>Cristal élémentaire</h2>
 
     <p>
-      Garde ton souffle tranquille.  
-      Ne force rien.  
-      Les cristaux entendent d’abord ce que tu caches à toi-même.
+      Très bien, kupo… le cercle s’est refermé.<br>
+      Tu ne réponds plus pour convaincre, mais pour te dévoiler.<br>
+      Le rituel cherche le guerrier enfoui sous les réflexes.
     </p>
 
-    <div class="result">
-      <h3>Partie I — Cristal élémentaire</h3>
+    <div class="block">
+      <h3>Ce que ce cristal écoute</h3>
       <p>
-        Ce cristal écoute l’élan qui anime ton âme quand tout se met à vibrer.  
+        Il écoute l’élan qui anime ton âme quand tout se met à vibrer.<br>
         Il ne suit pas ton masque, mais ce qui pulse avant ta pensée.
       </p>
     </div>
 
-    <div class="result">
-      <h3>Partie II — Cristal du cœur</h3>
+    <!-- Zone où les questions de la phase 1 apparaîtront -->
+    <div class="block" id="phase1-questions">
       <p>
-        Celui-ci observe la route que prend ton intention lorsqu’un lien se tend ou se brise.  
-        Il révèle la direction silencieuse de ton souffle.
+        Pour l’instant, l’Oracle n’a pas encore posé ses questions ici, kupo.<br>
+        Quand tu auras accepté de jouer honnêtement, les cristaux commenceront à parler.
       </p>
     </div>
 
-    <div class="result">
-      <h3>Partie III — Cristal de puissance</h3>
+    <button onclick="goToPhase('phase2')">Le cercle continue.</button>
+  </section>
+
+  <!-- PHASE II — CRISTAL DU CŒUR (S1 SOI/AUTRUI) -->
+  <section id="phase2">
+    <h2>Cristal du cœur</h2>
+
+    <div class="block">
+      <p>
+        Ce cristal observe la route que prend ton intention lorsqu’un lien se tend ou se brise.<br>
+        Il ne mesure pas ce que tu dis, mais ce qui se lève en premier : toi, ou l’autre.
+      </p>
+    </div>
+
+    <div class="block" id="phase2-questions">
+      <p>
+        Ici, l’Oracle testera la direction secrète de ton souffle : te protéger, protéger l’autre,<br>
+        ou tenter d’équilibrer une corde qui tremble, kupo.
+      </p>
+    </div>
+
+    <button onclick="goToPhase('phase3')">Le rituel descend plus profond.</button>
+  </section>
+
+  <!-- PHASE III — CRISTAL DE PUISSANCE (S2 PHYSIQUE/MAGIE) -->
+  <section id="phase3">
+    <h2>Cristal de puissance</h2>
+
+    <div class="block">
       <p>
         Ce cristal perçoit comment ta volonté devient acte.  
-        Peu importe l’arme, c’est la source qui compte, kupo.
+        Est-ce que ton corps ouvre la marche, ou est-ce ton esprit qui trace la route avant toi ?
       </p>
     </div>
 
-    <div class="result">
-      <h3>Partie IV — Cristal du masque</h3>
+    <div class="block" id="phase3-questions">
+      <p>
+        Ici, quelque chose observe sans te juger :  
+        tes réflexes, tes coups d’épaule, tes plans silencieux, kupo.
+      </p>
+    </div>
+
+    <button onclick="goToPhase('phase4')">Encore un pas.</button>
+  </section>
+
+  <!-- PHASE IV — CRISTAL DU MASQUE (S3 MASQUE/ESSENCE) + SOLITUDE (S4) -->
+  <section id="phase4">
+    <h2>Cristaux du masque et de solitude</h2>
+
+    <div class="block">
+      <h3>Cristal du masque</h3>
       <p>
         Ici, le cristal sent la forme que prend ton être quand il rencontre le monde.  
         Pas ce que tu prétends, mais ce qui se dessine malgré toi.
       </p>
     </div>
 
-    <div class="result">
-      <h3>Partie V — Cristal de solitude</h3>
+    <div class="block">
+      <h3>Cristal de solitude</h3>
       <p>
         Le dernier écoute l’endroit où ta lumière se restaure.  
-        Il ne demande pas ce que tu fuis, mais où tu redeviens entier.
+        Il ne demande pas ce que tu fuis, mais où tu redeviens entier, kupo.
       </p>
     </div>
 
-    <p style="margin-top: 25px;">
-      Pour l’instant, le cercle ne questionne pas.  
-      Quand tu l’accepteras, il ouvrira la voie, kupo.
-    </p>
+    <div class="block" id="phase4-questions">
+      <p>
+        Quand ces deux cristaux auront entendu ta façon de te montrer et ta façon de te recharger,  
+        l’Oracle pourra enfin tresser ton véritable profil.
+      </p>
+    </div>
 
     <button onclick="showResult()">J’accepte ce qui sommeille en moi.</button>
   </section>
@@ -208,7 +256,7 @@ footer {
   <section id="result">
     <h2>Révélation du guerrier intérieur</h2>
 
-    <div class="result">
+    <div class="block">
       <p>
         Le rite est accompli, kupo.<br>
         Derrière ton visage, une forme se dessine — un rôle, une manière de survivre,  
@@ -220,8 +268,12 @@ footer {
         et la trace que tu laisses dans les autres.
       </p>
     </div>
+
+    <div class="block">
+      <pre class="result-text"></pre>
+    </div>
     
-    <button onclick="restart()">Je marche à nouveau.</button>
+    <button onclick="restartRitual()">Je marche à nouveau.</button>
   </section>
 
   <footer>
@@ -230,22 +282,10 @@ footer {
 
 </div>
 
-<script>
-function start() {
-  document.getElementById("intro").classList.remove("active");
-  document.getElementById("quiz").classList.add("active");
-}
-
-function showResult() {
-  document.getElementById("quiz").classList.remove("active");
-  document.getElementById("result").classList.add("active");
-}
-
-function restart() {
-  document.getElementById("result").classList.remove("active");
-  document.getElementById("intro").classList.add("active");
-}
-</script>
+<!-- Scripts de l’oracle -->
+<script src="binaries.js"></script>
+<script src="elements.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
