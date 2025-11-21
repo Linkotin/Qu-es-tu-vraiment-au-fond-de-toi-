@@ -50,12 +50,12 @@ window.ORACLE.ELEMENTS = {
 // ======================
 
 window.ORACLE.AXES = {
-  BON_MAUVAIS: {
-    id: "BON_MAUVAIS",
-    positive: "Bon",
-    negative: "Mauvais",
+  SOI_AUTRUI: {
+    id: "SOI_AUTRUI",
+    positive: "Soi",
+    negative: "Autrui",
     description:
-      "Orientation spontanée vers les autres (Bon) ou vers soi (Mauvais)."
+      "Orientation spontanée vers les autres ou vers soi."
   },
 
   PHYSIQUE_MAGIE: {
@@ -81,26 +81,5 @@ window.ORACLE.AXES = {
     description:
       "Recharge d'énergie par la présence collective (Groupe) ou par la solitude (Solitaire)."
   }
-};
-
-
-// ======================
-// ⚜ FORMAT TYPE D'UN PROFIL (RÉFÉRENCE) ⚜
-// ======================
-
-/*
-window.ORACLE.EXAMPLE_PROFILE = {
-  element: "FEU", // clé dans ORACLE.ELEMENTS
-
-  axes: {
-    BON_MAUVAIS: 2,        // +3 = très Bon, -3 = très Mauvais
-    PHYSIQUE_MAGIE: -1,    // négatif = Physique, positif = Magie
-    COMMUN_RARE: 3,
-    SOLITAIRE_GROUPE: -2
-  },
-
-  // plus tard : titre FF, archétype, histoire, texte d'analyse...
-};
-*/
 
 console.log("ORACLE SYSTEM LOADED, kupo !");
